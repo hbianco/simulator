@@ -7,6 +7,7 @@ Created on Thu Jun 21 10:42:01 2018
 
 import pandas as pd
 import numpy as np
+import pdb
 
 MAP_ACTION={
             'buy':'b',
@@ -86,7 +87,7 @@ def test_input(s1, s2):
         s2 = pd.Series(s2.iloc[:,0], index=s1.index)
     elif  isinstance(s2, (int, float)):
         s2 = pd.Series(s2, index=s1.index)
-    elif  isinstance(s2, (list, np.array)):
+    elif  isinstance(s2, (list, np.ndarray)):
         if len(s2)!=len(s1):
             raise IndexError('the two series must be of equal length. Got {0:d} and {1:d}'.format(len(s1), len(s2)))
         s2 = pd.Series(s2, index=s1.index)
