@@ -6,7 +6,6 @@ Environment to create trading strategies.
 1. Create and print input rules.
 ```python
 import simulator.simulator as sim
-import EcoProject.EcoData as ed
 
 cemsig = sim.Signal(cembi)
 cemsig.add_rule({'cover and buy': [
