@@ -3,17 +3,7 @@ Environment to create trading strategies.
 
 ## Examples
 
-1. Screenshot startegy signals generated.
-```python
-import EcoData as ed
-
-ed.graph(data, ma_vs, ma_s, ma_l, chart_size=(15,10), legend=False, 
-         subgraph=rsi_l, trading_signal=trig, view_grid=True)
-```
-![alt text](/static/strategy_signals.png)
-
-
-2. Create and print input rules.
+1. Create and print input rules.
 ```python
 import simulator.simulator as sim
 import EcoProject.EcoData as ed
@@ -56,3 +46,18 @@ cemsig.eval_strat()
 print(cemsig)
 ```
 ![alt text](/static/strategy_display.png)
+
+
+2. Graph strategy with signals and PnL.
+```python
+import EcoData as ed
+
+ed.graph(cembi, cemsig.pnl, multiple_series=True,
+        trading_signal=cemsig.trigger,
+         chart_size=(15,10))
+```
+![alt text](/static/strategy_with_pnl.png)
+
+
+3. Graph strategy with signals and RSI.
+![alt text](/static/strategy_signals.png)
